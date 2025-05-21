@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Hotel Booking Portugal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="titulo-principal">Análisis de reservas hoteleras en Portugal</h1>
+    <p>
+      Explora la demanda, el riesgo de cancelación y el gasto turístico de los hoteles en Portugal (2015-2017).
+    </p>
+  </header>
+
+  <!-- Filtros -->
+  <div class="filtros-metricas">
+    <div class="filtro">
+      <label for="filtro-hotel">Tipo de hotel:</label>
+      <select id="filtro-hotel">
+        <option value="all">Todos</option>
+        <option value="Resort Hotel">Resort Hotel</option>
+        <option value="City Hotel">City Hotel</option>
+      </select>
+    </div>
+    <div class="filtro">
+      <label for="filtro-pais">País:</label>
+      <select id="filtro-pais">
+        <option value="all">Todos</option>
+      </select>
+    </div>
+    <div class="filtro">
+      <label for="filtro-anio">Año:</label>
+      <select id="filtro-anio">
+        <option value="all">Todos</option>
+      </select>
+    </div>
+    <div class="filtro">
+      <label for="filtro-segmento">Segmento:</label>
+      <select id="filtro-segmento">
+        <option value="all">Todos</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Métricas clave -->
+  <section>
+    <fieldset class="metricas-fieldset">
+      <legend id="titulo-metricas">Métricas clave</legend>
+      <div id="metricas" class="metricas"></div>
+    </fieldset>
+  </section>
+
+  <!-- Visualizaciones principales: lado a lado -->
+  <div class="graficas-row">
+    <section>
+      <h2>Demanda por país (Top 10)</h2>
+      <div class="chart-container">
+        <div id="barras-paises"></div>
+      </div>
+    </section>
+    <section>
+      <h2>Estacionalidad de la demanda</h2>
+      <div class="chart-container">
+        <div id="linea-temporal"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Visualizaciones secundarias: lado a lado -->
+  <div class="graficas-row">
+    <section>
+      <h2>Perfiles de viaje y riesgo de cancelación</h2>
+      <div class="chart-container">
+        <div id="barras-cancelacion"></div>
+      </div>
+    </section>
+    <section>
+      <h2>Gasto según tipo de estancia y hotel</h2>
+      <div class="chart-container">
+        <div id="barras-adr"></div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>Datos: Hotel bookings dataset | PEC 3 - Visualización de datos | Autor/a: Laura Tardà Pérez</p>
+  </footer>
+
+  <!-- Scripts D3.js -->
+  <script src="metricas.js"></script>
+  <script src="barras-paises.js"></script>
+  <script src="linea-temporal.js"></script>
+  <script src="barras-cancelacion.js"></script>
+  <script src="barras-adr.js"></script>
+</body>
+</html>
